@@ -28,6 +28,32 @@ A modern Pokémon browser built with React, TypeScript, and Vite.
 ### Routing
 - **React Router 7** – Routing
 
+## Folder Structure
+
+```
+.
+├── public/                  # Static assets
+├── src/
+│   ├── api/                 # API client and endpoints
+│   ├── assets/              # Images and static assets
+│   ├── components/          # Reusable UI components
+│   │   ├── header/          # Header and its subcomponents 
+│   │   └── ui/              # UI primitives (Button, Card, etc.)
+│   ├── hooks/               # Custom React hooks (debounce, api integration hooks and etc)
+│   ├── lib/                 # Utility functions
+│   ├── pages/               # Page components (home, detail, layouts)
+│   ├── providers/           # Context providers (e.g., theme)
+│   ├── routes/              # App route definitions
+│   ├── types.ts             # TypeScript types // we can also make it a folder for large project.
+│   ├── App.tsx              # App root component
+│   ├── main.tsx             # App entry point
+│   └── index.css            # Global styles
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
+
 ## Features
 
 - Browse Pokémon with multiple grid views
