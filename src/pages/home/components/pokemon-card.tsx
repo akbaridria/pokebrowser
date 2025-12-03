@@ -21,7 +21,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ name }) => {
     [data]
   );
   return (
-    <Link to={"/detail"}>
+    <Link to={`/pokemon/${name}`}>
       <Card className="gap-0 py-0">
         <CardHeader className="px-4 py-2">
           <div className="text-center font-medium capitalize">{name}</div>

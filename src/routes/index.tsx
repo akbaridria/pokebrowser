@@ -7,7 +7,7 @@ const DetailPage = lazy(() => import("@/pages/detail"));
 
 export const routes = [
   { path: "/", element: <HomePage /> },
-  { path: "/detail", element: <DetailPage /> },
+  { path: "/pokemon/:slug", element: <DetailPage /> },
 ];
 
 const AppRoutes = () => {
