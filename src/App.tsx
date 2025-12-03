@@ -1,8 +1,11 @@
+import { ThemeProvider } from "@/providers/theme-provider";
+import AppRoutes from "./routes";
+
 function App() {
   return (
-    <div>
-      <div>oke gandisini</div>
-    </div>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <AppRoutes />
+    </ThemeProvider>
   );
 }
 
