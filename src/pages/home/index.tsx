@@ -80,11 +80,17 @@ const HomePage = () => {
         <LoadingState filterOption={filterOption} />
       </Activity>
       <Activity mode={data && !isFetching ? "visible" : "hidden"}>
-        <div className={`grid gap-4 ${gridClasses[filterOption]}`}>
-          {filteredData?.results?.map((pokemon) => (
-            <PokemonCard key={pokemon.name} name={pokemon.name} />
-          ))}
-        </div>
+        {filteredData?.results?.length === 0 ? (
+          <div className="text-center text-muted-foreground py-12">
+            No Pokémon found matching your search.
+          </div>
+        ) : (
+          <div className={`grid gap-4 ${gridClasses[filterOption]}`}>
+            {filteredData?.results?.map((pokemon) => (
+              <PokemonCard key={pokemon.name} name={pokemon.name} />
+            ))}
+          </div>
+        )}
       </Activity>
     </div>
   );
