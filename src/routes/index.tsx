@@ -1,14 +1,23 @@
+import MainLayout from "@/pages/layouts/main-layout";
 import { lazy } from "react";
 import { Route, Routes } from "react-router";
 
 const HomePage = lazy(() => import("@/pages/home"));
 const DetailPage = lazy(() => import("@/pages/detail"));
 
+export const routes = [
+  { path: "/", element: <HomePage /> },
+  { path: "/detail", element: <DetailPage /> },
+];
+
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />}></Route>
-      <Route path="/" element={<DetailPage />}></Route>
+      <Route element={<MainLayout />}>
+        {routes.map(({ path, element }) => (
+          <Route key={path} path={path} element={element} />
+        ))}
+      </Route>
     </Routes>
   );
 };
